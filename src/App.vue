@@ -2,6 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
     <h1> Welcome to Vue </h1>
+    <h3> Welcome to my Page</h3>
     <router-link to="/food">food</router-link><br>
     <router-link to="/game">Game</router-link><br>
     <router-link to="/sports">Sports</router-link>
