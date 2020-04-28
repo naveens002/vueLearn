@@ -5,6 +5,7 @@ import HelloWorld from '@/components/HelloWorld'
 import food from '@/components/food'
 import game from '@/components/game'
 import sports from '@/components/sports'
+import image from '@/components/image'
 
 Vue.use(Router)
 
@@ -17,7 +18,7 @@ export default new Router({
             component: Home
         },
         {
-            path: '/food',
+            path: '/food/:id',
             name: 'food',
             component: food
         },
@@ -30,6 +31,11 @@ export default new Router({
             path: '/sports',
             name: 'sports',
             component: sports
+        },
+        {
+            path: '/food/image',
+            name: 'image',
+            component: image
         },
         {
             
