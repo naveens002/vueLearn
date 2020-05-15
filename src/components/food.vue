@@ -2,15 +2,18 @@
   <div class="hello">
     <div class="content">
     <h1>There are various Food listed below</h1>
-    <h2><router-link to="/food/1">Idly</router-link></h2>
+    <a href="#" v-on:click="showImage(4)">Food</a>
+    <h2>Idly</h2>
     <h2>Sampar</h2>
     <h2>Vada</h2>
-    <h2>Curd</h2>
+    <h2>Curd</h2>  
     <router-link to="/">Back to Home</router-link>
+       here{{image}}
+
     </div>
      <div class="content-image">
-      <img v-bind:src="'../assets/' + pic + '.jpg'" v-bind:alt="pic">
-   {{ id}} {{ pic}}
+      <p v-if="idly"><img class="link-image" alt="Food" src="../assets/idly.jpg" /></p>
+      <p v-if="vada"><img class="link-image" alt="Food" src="../assets/vada.jpg" /></p>
    </div>
   </div>
 </template>
@@ -21,12 +24,17 @@ export default {
   props: {
     msg: String
   },
-  data() {
+  methods: {
+   showImage: function (id) {
+     alert(id);
+  } 
+  },
+  data: function () {
+    alert(this.id);
     return {
-      id: this.$route.params.id,
-      pic: "idly"
+      vada: true
     }
-  }
+  }         
 };
 </script>
 
