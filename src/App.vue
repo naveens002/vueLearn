@@ -2,7 +2,7 @@
   <div id="app">
     <div class="list">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <h1> Welcome to Vue </h1>
+    <h1> Welcome to Vue </h1>{{data}}
     <h3> Welcome to my Page</h3>
     <router-link to="/food/2">food</router-link><br>
     <router-link to="/game">Game</router-link><br>
@@ -16,7 +16,12 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  data: function () {
+    return {
+      data: "show"
+    }
+  }  
 }
 </script>
 

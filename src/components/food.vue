@@ -1,19 +1,16 @@
 <template>
   <div class="hello">
-    <div class="content">
+    <div class="content" id="food">
     <h1>There are various Food listed below</h1>
-    <a href="#" v-on:click="showImage(4)">Food</a>
-    <h2>Idly</h2>
-    <h2>Sampar</h2>
-    <h2>Vada</h2>
-    <h2>Curd</h2>  
-    <router-link to="/">Back to Home</router-link>
-       here{{image}}
+    <h2><a href="#" v-on:click="showImage('idly')">Idly</a></h2>
+   <h2> <a href="#" v-on:click="showImage('vada')">vada</a></h2>
+    <h2><a href="#" v-on:click="showImage('sambar')">Sambar</a></h2>
+    <h2><a href="#" v-on:click="showImage('curd')">Curd</a></h2>
 
+    <router-link to="/">Back to Home</router-link>
     </div>
      <div class="content-image">
-      <p v-if="idly"><img class="link-image" alt="Food" src="../assets/idly.jpg" /></p>
-      <p v-if="vada"><img class="link-image" alt="Food" src="../assets/vada.jpg" /></p>
+      <img class="link-image" v-bind:src="getSourcePath()"/> 
    </div>
   </div>
 </template>
@@ -24,17 +21,19 @@ export default {
   props: {
     msg: String
   },
-  methods: {
-   showImage: function (id) {
-     alert(id);
-  } 
+   methods: {
+    showImage: function (data) {
+      this.defaultImage=data;
+    },
+    getSourcePath: function () {
+      return require(`../assets/${this.defaultImage}.jpg`);
+    }
   },
   data: function () {
-    alert(this.id);
     return {
-      vada: true
+      defaultImage: 'food'
     }
-  }         
+  }        
 };
 </script>
 
