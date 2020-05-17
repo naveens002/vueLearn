@@ -1,11 +1,16 @@
 <template>
   <div class="hello">
+    <div class="content" id="game">
     <h1>There are various Games listed below</h1>
-    <h2>Clash os clans</h2>
-    <h2>PUBG</h2>
-    <h2>Call of Duty</h2>
-    <h2>Truck Simulator</h2>
+         <h2> <div v-on:click="showImage(item.name)" v-for="item in items" :key="item.name">
+          {{ item.name }}
+      </div></h2>
+
 <router-link to="/">Back to Home</router-link>
+    </div>
+<div class="content-image">
+      <img class="link-image" v-bind:src="getSourcePath()" />
+    </div>
   </div>
 </template>
 
@@ -14,6 +19,25 @@ export default {
   name: "Welcome home",
   props: {
     msg: String
+  },
+  methods: {
+    showImage: function(data) {
+      this.defaultImage = data;
+    },
+    getSourcePath: function() {
+      return require(`../assets/${this.defaultImage}.jpg`);
+    }
+  },
+  data: function() {
+    return {
+      defaultImage: "game",
+      items: [
+      { name: 'coc' },
+      { name: 'cod' },
+      { name: 'pubg' },
+      { name: 'mostWanted' }
+    ]
+    };
   }
 };
 </script>
@@ -35,8 +59,14 @@ a {
   color: #42b983;
 }
 .hello {
-text-align: center;
-margin-top: -300px;
-
+  text-align: center;
+  margin-top: -300px;
+}
+.content-image {
+  padding-left: 355px;
+  margin-top: -130px;
+}
+.link-image {
+  width: 20%;
 }
 </style>

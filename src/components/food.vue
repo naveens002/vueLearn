@@ -1,17 +1,16 @@
 <template>
   <div class="hello">
     <div class="content" id="food">
-    <h1>There are various Food listed below</h1>
-    <h2><a href="#" v-on:click="showImage('idly')">Idly</a></h2>
-   <h2> <a href="#" v-on:click="showImage('vada')">vada</a></h2>
-    <h2><a href="#" v-on:click="showImage('sambar')">Sambar</a></h2>
-    <h2><a href="#" v-on:click="showImage('curd')">Curd</a></h2>
+      <h1>There are various Food listed below</h1>
+         <h2> <div v-on:click="showImage(item.name)" v-for="item in items" :key="item.name">
+          {{ item.name }}
+      </div></h2>
 
-    <router-link to="/">Back to Home</router-link>
+      <router-link to="/">Back to Home</router-link>
     </div>
-     <div class="content-image">
-      <img class="link-image" v-bind:src="getSourcePath()"/> 
-   </div>
+    <div class="content-image">
+      <img class="link-image" v-bind:src="getSourcePath()" />
+    </div>
   </div>
 </template>
 
@@ -21,19 +20,25 @@ export default {
   props: {
     msg: String
   },
-   methods: {
-    showImage: function (data) {
-      this.defaultImage=data;
+  methods: {
+    showImage: function(data) {
+      this.defaultImage = data;
     },
-    getSourcePath: function () {
+    getSourcePath: function() {
       return require(`../assets/${this.defaultImage}.jpg`);
     }
   },
-  data: function () {
+  data: function() {
     return {
-      defaultImage: 'food'
-    }
-  }        
+      defaultImage: "food",
+      items: [
+      { name: 'idly' },
+      { name: 'sambar' },
+      { name: 'vada' },
+      { name: 'curd' }
+    ]
+    };
+  }
 };
 </script>
 
@@ -54,15 +59,14 @@ a {
   color: #42b983;
 }
 .hello {
-text-align: center;
-margin-top: -300px;
+  text-align: center;
+  margin-top: -300px;
 }
 .content-image {
-padding-left: 300px;
-margin-top: -205px;
+  padding-left: 300px;
+  margin-top: -130px;
 }
 .link-image {
   width: 10%;
 }
-
 </style>
