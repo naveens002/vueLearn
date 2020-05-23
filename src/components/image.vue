@@ -1,8 +1,7 @@
 <template>
-  
-   <div class="content-image">
-      <img class="link-image" v-bind:src="getSourcePath()" />
-    </div>
+  <div class="content-image">
+    <img class="link-image" v-bind:src="getSourcePath()" />
+  </div>
 </template>
 
 <script>
@@ -42,5 +41,4 @@ a {
 .link-image {
   width: 10%;
 }
-
 </style>

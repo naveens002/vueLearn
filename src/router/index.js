@@ -20,21 +20,21 @@ export default new Router({
         {
             path: '/food', component: food,
             children: [
-              { path: 'image/:id', component: image },
+                { path: 'image/:id', component: image },
             ]
-          },
-          {
+        },
+        {
             path: '/game', component: game,
             children: [
-              { path: 'image/:id', component: image },
+                { path: 'image/:id', component: image },
             ]
-          },
+        },
         {
             path: '/sports', component: sports,
             children: [
-              { path: 'image/:id', component: image },
+                { path: 'image/:id', component: image },
             ]
-          },
+        },
         {
             path: '/home',
             name: 'HelloWorld',

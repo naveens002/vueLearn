@@ -1,13 +1,18 @@
 <template>
   <div class="hello">
     <div class="content" id="game">
-    <h1>There are various Games listed below</h1>
-         <h2><router-link :to="'/game/image/' + item.name" v-for="item in items" :key="item.name">{{ item.name }}<br></router-link></h2>
+      <h1>There are various Games listed below</h1>
+      <h2>
+        <router-link :to="'/game/image/' + item.name" v-for="item in items" :key="item.name">
+          {{ item.name }}
+          <br />
+        </router-link>
+      </h2>
 
-<router-link to="/">Back to Home</router-link>
+      <router-link to="/">Back to Home</router-link>
     </div>
     <div>
-     <router-view />
+      <router-view />
     </div>
   </div>
 </template>
@@ -30,11 +35,11 @@ export default {
     return {
       defaultImage: "game",
       items: [
-      { name: 'coc' },
-      { name: 'cod' },
-      { name: 'pubg' },
-      { name: 'mostWanted' }
-    ]
+        { name: "coc" },
+        { name: "cod" },
+        { name: "pubg" },
+        { name: "mostWanted" }
+      ]
     };
   }
 };

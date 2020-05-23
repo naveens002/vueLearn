@@ -2,13 +2,17 @@
   <div class="hello">
     <div class="content" id="food">
       <h1>There are various Food listed below</h1>
-<h2><router-link :to="'/food/image/' + item.name" v-for="item in items" :key="item.name">{{ item.name }}<br></router-link></h2>
+      <h2>
+        <router-link :to="'/food/image/' + item.name" v-for="item in items" :key="item.name">
+          {{ item.name }}
+          <br />
+        </router-link>
+      </h2>
       <router-link to="/">Back to Home</router-link>
     </div>
     <div>
       <router-view />
     </div>
-    
   </div>
 </template>
 
@@ -22,11 +26,11 @@ export default {
     return {
       defaultImage: "food",
       items: [
-      { name: 'idly' },
-      { name: 'sambar' },
-      { name: 'vada' },
-      { name: 'curd' }
-    ]
+        { name: "idly" },
+        { name: "sambar" },
+        { name: "vada" },
+        { name: "curd" }
+      ]
     };
   }
 };

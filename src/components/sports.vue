@@ -1,9 +1,14 @@
 <template>
   <div class="hello">
     <div class="content" id="sports">
-    <h1>There are various sports listed below</h1>
-      <h2><router-link :to="'/sports/image/' + item.name" v-for="item in items" :key="item.name">{{ item.name }}<br></router-link></h2>
-    <router-link to="/">Back to Home</router-link>
+      <h1>There are various sports listed below</h1>
+      <h2>
+        <router-link :to="'/sports/image/' + item.name" v-for="item in items" :key="item.name">
+          {{ item.name }}
+          <br />
+        </router-link>
+      </h2>
+      <router-link to="/">Back to Home</router-link>
     </div>
     <div>
       <router-view />
@@ -28,11 +33,7 @@ export default {
   data: function() {
     return {
       defaultImage: "sports",
-      items: [
-      { name: 'cricket' },
-      { name: 'tennis' },
-      { name: 'football' }
-    ]
+      items: [{ name: "cricket" }, { name: "tennis" }, { name: "football" }]
     };
   }
 };
