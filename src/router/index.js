@@ -18,27 +18,24 @@ export default new Router({
             component: Home
         },
         {
-            path: '/food/:id',
-            name: 'food',
-            component: food
-        },
+            path: '/food', component: food,
+            children: [
+              { path: 'image/:id', component: image },
+            ]
+          },
+          {
+            path: '/game', component: game,
+            children: [
+              { path: 'image/:id', component: image },
+            ]
+          },
         {
-            path: '/game',
-            name: 'game',
-            component: game
-        },
+            path: '/sports', component: sports,
+            children: [
+              { path: 'image/:id', component: image },
+            ]
+          },
         {
-            path: '/sports',
-            name: 'sports',
-            component: sports
-        },
-        {
-            path: '/food/image',
-            name: 'image',
-            component: image
-        },
-        {
-            
             path: '/home',
             name: 'HelloWorld',
             component: HelloWorld

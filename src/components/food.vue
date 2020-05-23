@@ -2,15 +2,13 @@
   <div class="hello">
     <div class="content" id="food">
       <h1>There are various Food listed below</h1>
-         <h2> <div v-on:click="showImage(item.name)" v-for="item in items" :key="item.name">
-          {{ item.name }}
-      </div></h2>
-
+<h2><router-link :to="'/food/image/' + item.name" v-for="item in items" :key="item.name">{{ item.name }}<br></router-link></h2>
       <router-link to="/">Back to Home</router-link>
     </div>
-    <div class="content-image">
-      <img class="link-image" v-bind:src="getSourcePath()" />
+    <div>
+      <router-view />
     </div>
+    
   </div>
 </template>
 
@@ -19,14 +17,6 @@ export default {
   name: "Welcome home",
   props: {
     msg: String
-  },
-  methods: {
-    showImage: function(data) {
-      this.defaultImage = data;
-    },
-    getSourcePath: function() {
-      return require(`../assets/${this.defaultImage}.jpg`);
-    }
   },
   data: function() {
     return {
@@ -61,12 +51,5 @@ a {
 .hello {
   text-align: center;
   margin-top: -300px;
-}
-.content-image {
-  padding-left: 300px;
-  margin-top: -130px;
-}
-.link-image {
-  width: 10%;
 }
 </style>

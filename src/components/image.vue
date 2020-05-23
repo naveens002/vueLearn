@@ -1,8 +1,8 @@
 <template>
   
    <div class="content-image">
-    <img class="link-image" alt="link-image" src="../assets/idly.jpg" />
-   </div>
+      <img class="link-image" v-bind:src="getSourcePath()" />
+    </div>
 </template>
 
 <script>
@@ -10,6 +10,11 @@ export default {
   name: "Welcome home",
   props: {
     msg: String
+  },
+  methods: {
+    getSourcePath: function() {
+      return require(`../assets/${this.$route.params.id}.jpg`);
+    }
   }
 };
 </script>
@@ -31,8 +36,8 @@ a {
   color: #42b983;
 }
 .content-image {
-padding-left: 125px;
-margin-top: -205px;
+  padding-left: 300px;
+  margin-top: -130px;
 }
 .link-image {
   width: 10%;

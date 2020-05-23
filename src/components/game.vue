@@ -2,14 +2,12 @@
   <div class="hello">
     <div class="content" id="game">
     <h1>There are various Games listed below</h1>
-         <h2> <div v-on:click="showImage(item.name)" v-for="item in items" :key="item.name">
-          {{ item.name }}
-      </div></h2>
+         <h2><router-link :to="'/game/image/' + item.name" v-for="item in items" :key="item.name">{{ item.name }}<br></router-link></h2>
 
 <router-link to="/">Back to Home</router-link>
     </div>
-<div class="content-image">
-      <img class="link-image" v-bind:src="getSourcePath()" />
+    <div>
+     <router-view />
     </div>
   </div>
 </template>
