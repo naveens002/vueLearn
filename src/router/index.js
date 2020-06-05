@@ -6,6 +6,7 @@ import food from '@/components/food'
 import game from '@/components/game'
 import sports from '@/components/sports'
 import image from '@/components/image'
+import form from '@/components/form'
 
 Vue.use(Router)
 
@@ -13,7 +14,7 @@ export default new Router({
     mode: 'history',
     routes: [
         {
-            path: '/',
+            path: '/app',
             name: 'Home',
             component: Home
         },
@@ -34,6 +35,11 @@ export default new Router({
             children: [
                 { path: 'image/:id', component: image },
             ]
+        },
+        {
+            path: '/form',
+            name: 'form',
+            component: form
         },
         {
             path: '/home',

@@ -10,6 +10,8 @@
       <router-link to="/game">Game</router-link>
       <br />
       <router-link to="/sports">Sports</router-link>
+      <br />
+      <router-link to="/form">form</router-link>
     </div>
     <div class="details">
       <router-view />
@@ -22,7 +24,7 @@ export default {
   name: "app",
   data: function() {
     return {
-      data: "show"
+      data: "test"
     };
   }
 };
