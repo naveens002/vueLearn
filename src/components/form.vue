@@ -48,9 +48,7 @@ export default {
   name: "Welcome home",
   props: {
     firstName: String,
-    lastName: String,
-    countryName: String,
-    stateName: String
+    lastName: String
   },
   data: function() {
     return {
