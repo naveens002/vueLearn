@@ -3,8 +3,10 @@
     <div class="list">
       <img alt="Vue logo" src="./assets/logo.png" />
       <h1>Welcome to Vue</h1>
-      {{data}}
-      <h3>Welcome to my Page</h3>
+      {{data}}{{selectedUser}}
+      <div v-for="user in selectedUser" :key="user">{{user.name}}</div>
+
+      <h3>Welcome to my Page {{selectedUser}}</h3>
       <router-link to="/food">food</router-link>
       <br />
       <router-link to="/game">Game</router-link>
@@ -12,6 +14,8 @@
       <router-link to="/sports">Sports</router-link>
       <br />
       <router-link to="/form">form</router-link>
+      <br />
+      
     </div>
     <div class="details">
       <router-view />
@@ -24,8 +28,13 @@ export default {
   name: "app",
   data: function() {
     return {
-      data: "test"
+      data: "Seleceted User is "
     };
+  },
+  computed: {
+    selectedUser() {
+      return this.$store.state.selectedUser;
+    }
   }
 };
 </script>

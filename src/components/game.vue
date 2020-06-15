@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <div class="content" id="game">
-      <h1>There are various Games listed below</h1>
+      <h1>There are various Games listed below {{selectedUser}}</h1>
       <h2>
         <router-link :to="'/game/image/' + item.name" v-for="item in items" :key="item.name">
           {{ item.name }}
@@ -41,6 +41,11 @@ export default {
         { name: "mostWanted" }
       ]
     };
+  },
+  computed: {
+    selectedUser() {
+      return this.$store.state.selectedUser;
+    }
   }
 };
 </script>

@@ -33,7 +33,13 @@
           <option v-for="city in cities" :key="city">{{city}}</option>
         </select>
       </h3>
-
+      <h3>
+        <span>Select the Global User:</span>
+        <select v-model="selectedUser">
+        <option value>Select the User</option>
+        <option v-for="user in users" :key="user">{{user.name}}</option>
+      </select>
+      </h3>
       <h2>User Entered Value</h2>
       <h3>Name: {{firstName}} {{lastName}}</h3>
       <h3>User country is {{selectedContinent}}</h3>
@@ -66,7 +72,8 @@ export default {
       cities: [],
       selectedContinent: "",
       selectedCountry: "",
-      selectedCity: ""
+      selectedCity: "",
+      selectedUser: ""
     };
   },
   watch: {
@@ -89,6 +96,14 @@ export default {
       if (this.selectedCountry.length > 0) {
         this.cities = this.places[this.selectedContinent][this.selectedCountry];
       }
+    },
+    selectedUser: function() {
+      this.$store.state.selectedUser = this.selectedUser;
+    }
+  },
+  computed: {
+    users() {
+      return this.$store.state.users;
     }
   }
 };
