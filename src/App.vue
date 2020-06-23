@@ -4,9 +4,8 @@
       <img alt="Vue logo" src="./assets/logo.png" />
       <h1>Welcome to Vue</h1>
       {{data}}{{selectedUser}}
-      <div v-for="user in selectedUser" :key="user">{{user.name}}</div>
-
-      <h3>Welcome to my Page {{selectedUser}}</h3>
+      
+      <h3>Welcome to my Page </h3>
       <router-link to="/food">food</router-link>
       <br />
       <router-link to="/game">Game</router-link>
@@ -33,7 +32,7 @@ export default {
   },
   computed: {
     selectedUser() {
-      return this.$store.state.selectedUser;
+      return this.$store.getters.selectedUser;
     }
   }
 };

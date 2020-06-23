@@ -12,5 +12,18 @@ export const store = new Vuex.Store({
             {name: 'Remi', id:'3'},
             {name: 'Leona', id:'4'}
         ]
+    },
+    getters: {
+        users(state) {
+            return state.users;
+          },
+          selectedUser(state) {
+              return state.selectedUser;
+          }
+    },
+    mutations: {
+        changeUser(state,user) {
+            store.state.selectedUser = user;
+        }
     }
 });

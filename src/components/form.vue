@@ -98,12 +98,12 @@ export default {
       }
     },
     selectedUser: function() {
-      this.$store.state.selectedUser = this.selectedUser;
+      this.$store.commit('changeUser',this.selectedUser); 
     }
   },
   computed: {
     users() {
-      return this.$store.state.users;
+      return this.$store.getters.users;
     }
   }
 };
