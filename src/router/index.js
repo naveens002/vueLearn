@@ -7,6 +7,7 @@ import game from '@/components/game'
 import sports from '@/components/sports'
 import image from '@/components/image'
 import form from '@/components/form'
+import cricketHome from '@/components/cricketHome'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
             path: '/form',
             name: 'form',
             component: form
+        },
+        {
+            path: '/cricket',
+            name: 'cricket',
+            component: cricketHome
         },
         {
             path: '/home',

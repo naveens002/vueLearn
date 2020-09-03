@@ -110,8 +110,5 @@ export default {
 </script>
 
 <style scoped>
-.hello {
-  text-align: center;
-  margin-top: -300px;
-}
+
 </style>

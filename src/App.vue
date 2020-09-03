@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="main-container">
     <div class="list">
       <img alt="Vue logo" src="./assets/logo.png" />
       <h1>Welcome to Vue</h1>
@@ -14,7 +14,8 @@
       <br />
       <router-link to="/form">form</router-link>
       <br />
-      
+      <router-link to="/cricket">Static</router-link>
+      <br />
     </div>
     <div class="details">
       <router-view />
@@ -39,14 +40,7 @@ export default {
 </script>
 
 <style>
-.list-item {
-  height: 100%;
-  width: 50%;
-  left: 0;
-}
-.item-details {
-  height: 100%;
-  width: 50%;
-  right: 0;
+.main-container{
+display: flex;
 }
 </style>

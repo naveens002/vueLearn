@@ -66,10 +66,6 @@ li {
 a {
   color: #42b983;
 }
-.hello {
-  text-align: center;
-  margin-top: -300px;
-}
 .content-image {
   padding-left: 355px;
   margin-top: -130px;
